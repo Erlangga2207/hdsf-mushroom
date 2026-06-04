@@ -146,7 +146,7 @@ require_once 'header.php';
     </div>
 
     <!-- ===== AKSI CEPAT ===== -->
-    <div class="grid grid-cols-2 gap-gutter mb-lg">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter mb-lg">
         <a href="barang_masuk/tambah.php"
            class="bg-surface-container-lowest rounded-xl card-shadow border border-outline-variant/10 p-md flex items-center gap-md hover:border-primary/40 hover:shadow-md transition-all group">
             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">

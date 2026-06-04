@@ -11,6 +11,11 @@
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
+  @media (max-width: 767px) {
+    .text-headline-xl { font-size: 2rem !important; line-height: 2.5rem !important; }
+    .text-headline-lg { font-size: 1.625rem !important; line-height: 2.25rem !important; }
+    .text-headline-md { font-size: 1.2rem !important; line-height: 1.75rem !important; }
+  }
 </style>
 <script id="tailwind-config">
   tailwind.config = {
@@ -110,29 +115,37 @@
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 
 <!-- Top Navigation Bar -->
-<header class="bg-surface/90 dark:bg-on-background/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm">
+<header class="bg-surface/90 dark:bg-on-background/90 backdrop-blur-md top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm">
   <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
-  <a href="beranda.html">
-    <img 
-      src="image/logo.png" 
-      alt="HDSF Mushroom Logo" 
-      class="h-14 w-auto object-contain"
-    />
-  </a>
+    <a href="beranda.html">
+      <img src="image/logo.png" alt="HDSF Mushroom Logo" class="h-12 w-auto object-contain"/>
+    </a>
     <div class="hidden md:flex items-center gap-8">
       <a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="beranda.html">Beranda</a>
       <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="produk.html">Produk</a>
       <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="tentang.html">Tentang</a>
       <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="kontak.html">Kontak</a>
     </div>
-    <a href="kontak.html#contactForm" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform shadow-md inline-block">
-  Pesan Sekarang
-</a>
-  </nav>
+    <a href="kontak.html#contactForm" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md shadow-md">
+      Pesan Sekarang
+    </a>
+    <button id="hamburger-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Buka menu">
+      <span class="material-symbols-outlined text-primary text-[28px]">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/20 bg-surface shadow-md">
+    <div class="flex flex-col px-gutter py-4 gap-1">
+      <a class="py-3 font-label-md text-label-md text-primary font-bold border-b border-outline-variant/20" href="beranda.html">Beranda</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="produk.html">Produk</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="tentang.html">Tentang</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="kontak.html">Kontak</a>
+      <a href="kontak.html#contactForm" class="mt-4 bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md text-center block">Pesan Sekarang</a>
+    </div>
+  </div>
 </header>
 
 <!-- Hero Section -->
-<section class="relative min-h-[800px] flex items-center justify-center overflow-hidden">
+<section class="relative min-h-[600px] md:min-h-[800px] flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0 z-0">
   <img 
     class="w-full h-full object-cover"
@@ -253,7 +266,7 @@
   <div class="max-w-3xl mx-auto text-center">
     <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Testimoni Pasar</h2>
     <p class="font-body-md text-body-md text-on-surface-variant mb-12">Dengar langsung dari pasar tetap yang telah merasakan kualitas produk HDSF Mushroom.</p>
-    <div class="bg-surface p-12 rounded-3xl shadow-sm border border-outline-variant/20 relative">
+    <div class="bg-surface p-6 md:p-12 rounded-3xl shadow-sm border border-outline-variant/20 relative">
       <div class="flex justify-center gap-1 mb-6">
         <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
         <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -275,7 +288,7 @@
 
 <!-- CTA Banner -->
 <section class="px-gutter py-section-gap">
-  <div class="max-w-container-max mx-auto bg-primary rounded-3xl p-12 text-center text-on-primary relative overflow-hidden">
+  <div class="max-w-container-max mx-auto bg-primary rounded-3xl p-6 md:p-12 text-center text-on-primary relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <img class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZn3sG5q_Dle21GgSdLoz2qC2Dk2GK3oLRo0pJtXO6lYNsJmOZa7c_rlN4UxWyL49ddJg0UFPzv9TPUU0TN9LhZ5o-v0UWNlg788AFFIWbhF2N6RWEly81FUL4XW3SwU0l5FCf89rtAxrr6va0h98cikXLjKkzd_xKmqR7h__CAJiAuUDvEdDL-eZLguhFfuqk-TuNxc4Wn_yuZXdD87KymOjNS4ceHz8Of9H_i-8wVpmWdy4uVf-x7rF-gwDl4Xcv1Sqpn9ym-Vw" alt=""/>
     </div>
@@ -368,5 +381,11 @@
   </div>
 </footer>
 
+<script>
+document.getElementById('hamburger-btn').addEventListener('click', function() {
+  var menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+});
+</script>
 </body>
 </html>

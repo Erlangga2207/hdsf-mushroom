@@ -108,6 +108,11 @@
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
+  @media (max-width: 767px) {
+    .text-headline-xl { font-size: 2rem !important; line-height: 2.5rem !important; }
+    .text-headline-lg { font-size: 1.625rem !important; line-height: 2.25rem !important; }
+    .text-headline-md { font-size: 1.2rem !important; line-height: 1.75rem !important; }
+  }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
@@ -115,23 +120,28 @@
 <!-- Top Navigation Bar -->
 <header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
   <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
-  <a href="beranda.html">
-    <img 
-      src="image/logo.png" 
-      alt="HDSF Mushroom Logo" 
-      class="h-14 w-auto object-contain"
-    />
-  </a>
+    <a href="beranda.html">
+      <img src="image/logo.png" alt="HDSF Mushroom Logo" class="h-12 w-auto object-contain"/>
+    </a>
     <div class="hidden md:flex gap-8 items-center">
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="beranda.html">Beranda</a>
       <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="produk.html">Produk</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="tentang.html">Tentang</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="kontak.html">Kontak</a>
     </div>
-    <div class="md:hidden">
-      <span class="material-symbols-outlined text-primary">menu</span>
+    <button id="hamburger-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Buka menu">
+      <span class="material-symbols-outlined text-primary text-[28px]">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/20 bg-surface shadow-md">
+    <div class="flex flex-col px-gutter py-4 gap-1">
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="beranda.html">Beranda</a>
+      <a class="py-3 font-label-md text-label-md text-primary font-bold border-b border-outline-variant/20" href="produk.html">Produk</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="tentang.html">Tentang</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="kontak.html">Kontak</a>
+      <a href="kontak.html" class="mt-4 bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md text-center block">Pesan Sekarang</a>
     </div>
-  </nav>
+  </div>
 </header>
 
 <!-- Hero Section -->
@@ -276,7 +286,7 @@ class="w-full block text-center py-3 rounded-lg border border-primary text-prima
   </div>
 
   <!-- BIBIT -->
-  <div class="produk bibit bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+  <div class="produk bibit bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-shadow group w-full max-w-[300px]">
     <div class="h-56 overflow-hidden">
       <img class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
       src="image/f1.jpeg">
@@ -363,6 +373,8 @@ class="w-full block text-center py-3 rounded-lg border border-primary text-prima
     </div>
 
   </div>
+  </div>
+</section>
 
 <!-- Why Choose Us -->
 <section class="bg-surface-container py-section-gap">
@@ -566,6 +578,10 @@ class="w-full block text-center py-3 rounded-lg border border-primary text-prima
   </div>
 </footer>
 <script>
+
+document.getElementById('hamburger-btn').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
 
 function filterProduk(kategori, tombol) {
 

@@ -112,6 +112,11 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
+  @media (max-width: 767px) {
+    .text-headline-xl { font-size: 2rem !important; line-height: 2.5rem !important; }
+    .text-headline-lg { font-size: 1.625rem !important; line-height: 2.25rem !important; }
+    .text-headline-md { font-size: 1.2rem !important; line-height: 1.75rem !important; }
+  }
 </style>
 </head>
 <body class="bg-background text-on-background font-body-md">
@@ -119,22 +124,28 @@
 <!-- TopNavBar -->
 <nav class="bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm sticky top-0 z-50">
   <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
-  <a href="beranda.html">
-    <img 
-      src="image/logo.png" 
-      alt="HDSF Mushroom Logo" 
-      class="h-14 w-auto object-contain"
-    />
-  </a>
+    <a href="beranda.html">
+      <img src="image/logo.png" alt="HDSF Mushroom Logo" class="h-12 w-auto object-contain"/>
+    </a>
     <div class="hidden md:flex gap-8 items-center">
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="beranda.html">Beranda</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="produk.html">Produk</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="tentang.html">Tentang</a>
       <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="kontak.html">Kontak</a>
     </div>
-    <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform shadow-md">
-      <a href="https://api.whatsapp.com/send/?phone=6282119017471&text&type=phone_number&app_absent=0" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm">Hubungi Kami</a>
+    <a href="https://api.whatsapp.com/send/?phone=6282119017471&text&type=phone_number&app_absent=0" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md shadow-md">Hubungi Kami</a>
+    <button id="hamburger-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Buka menu">
+      <span class="material-symbols-outlined text-primary text-[28px]">menu</span>
     </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/20 bg-surface shadow-md">
+    <div class="flex flex-col px-gutter py-4 gap-1">
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="beranda.html">Beranda</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="produk.html">Produk</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="tentang.html">Tentang</a>
+      <a class="py-3 font-label-md text-label-md text-primary font-bold border-b border-outline-variant/20" href="kontak.html">Kontak</a>
+      <a href="https://api.whatsapp.com/send/?phone=6282119017471&text&type=phone_number&app_absent=0" class="mt-4 bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md text-center block">Hubungi Kami</a>
+    </div>
   </div>
 </nav>
 
@@ -457,6 +468,10 @@
   </div>
 </footer>
 <script>
+document.getElementById('hamburger-btn').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
 

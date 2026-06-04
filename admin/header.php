@@ -114,17 +114,25 @@ $nav_items = [
 </head>
 <body class="text-on-surface">
 
+<!-- ===== SIDEBAR OVERLAY (mobile) ===== -->
+<div id="sidebar-overlay" class="fixed inset-0 bg-black/40 z-40 hidden md:hidden" onclick="closeSidebar()"></div>
+
 <!-- ===== SIDEBAR ===== -->
-<aside class="fixed h-screen w-64 left-0 top-0 overflow-y-auto bg-surface-container-low border-r border-outline-variant/20 shadow-sm flex flex-col py-lg z-50">
+<aside id="sidebar" class="fixed h-screen w-64 left-0 top-0 overflow-y-auto bg-surface-container-low border-r border-outline-variant/20 shadow-sm flex flex-col py-lg -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
     <div class="px-md mb-lg">
-        <div class="flex items-center gap-sm">
-            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL' 1">eco</span>
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-sm">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL' 1">eco</span>
+                </div>
+                <div>
+                    <h1 class="text-[18px] font-semibold text-primary leading-tight">HDSF Mushroom</h1>
+                    <p class="text-[12px] text-on-surface-variant opacity-70">Inventory System</p>
+                </div>
             </div>
-            <div>
-                <h1 class="text-[18px] font-semibold text-primary leading-tight">HDSF Mushroom</h1>
-                <p class="text-[12px] text-on-surface-variant opacity-70">Inventory System</p>
-            </div>
+            <button class="md:hidden p-1 rounded-lg hover:bg-surface-variant/50 transition-colors" onclick="closeSidebar()" aria-label="Tutup menu">
+                <span class="material-symbols-outlined text-on-surface-variant text-[22px]">close</span>
+            </button>
         </div>
     </div>
 
@@ -153,8 +161,11 @@ $nav_items = [
 </aside>
 
 <!-- ===== TOP APP BAR ===== -->
-<header class="fixed top-0 right-0 left-64 h-16 bg-surface border-b border-outline-variant/10 z-40 flex items-center px-margin justify-between">
+<header class="fixed top-0 right-0 left-0 md:left-64 h-16 bg-surface border-b border-outline-variant/10 z-30 flex items-center px-4 md:px-margin justify-between">
     <div class="flex items-center gap-sm">
+        <button class="md:hidden p-1 mr-1 rounded-lg hover:bg-surface-container transition-colors" onclick="openSidebar()" aria-label="Buka menu">
+            <span class="material-symbols-outlined text-primary text-[26px]">menu</span>
+        </button>
         <span class="material-symbols-outlined text-primary text-[22px]">
             <?php
             $icon_map = [
@@ -178,7 +189,7 @@ $nav_items = [
 </header>
 
 <!-- ===== MAIN CONTENT WRAPPER ===== -->
-<main class="ml-64 mt-16 p-margin min-h-screen">
+<main class="ml-0 md:ml-64 mt-16 p-4 md:p-margin min-h-screen">
 <?php
 // Flash message display
 if (isset($_SESSION['flash_message'])):
@@ -198,3 +209,13 @@ if (isset($_SESSION['flash_message'])):
     </button>
 </div>
 <?php endif; ?>
+<script>
+function openSidebar() {
+    document.getElementById('sidebar').classList.remove('-translate-x-full');
+    document.getElementById('sidebar-overlay').classList.remove('hidden');
+}
+function closeSidebar() {
+    document.getElementById('sidebar').classList.add('-translate-x-full');
+    document.getElementById('sidebar-overlay').classList.add('hidden');
+}
+</script>

@@ -115,29 +115,40 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
+  @media (max-width: 767px) {
+    .text-headline-xl { font-size: 2rem !important; line-height: 2.5rem !important; }
+    .text-headline-lg { font-size: 1.625rem !important; line-height: 2.25rem !important; }
+    .text-headline-md { font-size: 1.2rem !important; line-height: 1.75rem !important; }
+  }
 </style>
 </head>
 <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 
 <!-- TopNavBar -->
-<nav class="bg-surface/90 dark:bg-on-background/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50">
+<nav class="bg-surface/90 dark:bg-on-background/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm top-0 sticky z-50">
   <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
-  <a href="beranda.html">
-    <img 
-      src="image/logo.png" 
-      alt="HDSF Mushroom Logo" 
-      class="h-14 w-auto object-contain"
-    />
-  </a>
+    <a href="beranda.html">
+      <img src="image/logo.png" alt="HDSF Mushroom Logo" class="h-12 w-auto object-contain"/>
+    </a>
     <div class="hidden md:flex items-center space-x-8">
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="beranda.html">Beranda</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="produk.html">Produk</a>
       <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="tentang.html">Tentang</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="kontak.html">Kontak</a>
     </div>
-    <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform shadow-md">
-      <a href="kontak.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm">Hubungi Kami</a>
+    <a href="kontak.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md shadow-md">Hubungi Kami</a>
+    <button id="hamburger-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Buka menu">
+      <span class="material-symbols-outlined text-primary text-[28px]">menu</span>
     </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/20 bg-surface shadow-md">
+    <div class="flex flex-col px-gutter py-4 gap-1">
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="beranda.html">Beranda</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="produk.html">Produk</a>
+      <a class="py-3 font-label-md text-label-md text-primary font-bold border-b border-outline-variant/20" href="tentang.html">Tentang</a>
+      <a class="py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary border-b border-outline-variant/20" href="kontak.html">Kontak</a>
+      <a href="kontak.html" class="mt-4 bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md text-center block">Hubungi Kami</a>
+    </div>
   </div>
 </nav>
 
@@ -168,7 +179,7 @@ Berawal dari skala budidaya kecil, HDSF Mushroom terus berkembang melalui inovas
   Proses Budidaya Jamur
 </a>
     </div>
-    <div class="mt-16 grid grid-cols-3 gap-8 border-t border-outline-variant/30 pt-10">
+    <div class="mt-10 grid grid-cols-3 gap-4 border-t border-outline-variant/30 pt-8">
       <div>
         <div class="font-headline-lg text-headline-lg text-primary">7+</div>
         <div class="font-label-sm text-label-sm text-on-surface-variant">Tahun Perjalanan</div>
@@ -217,19 +228,19 @@ Berawal dari skala budidaya kecil, HDSF Mushroom terus berkembang melalui inovas
         </ul>
       </div>
     </div>
-    <div class="relative group pb-10">
+    <div class="relative group pb-4 md:pb-16">
 
   <!-- Gambar -->
   <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-    <img 
+    <img
       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
       src="image/kumbung.png"
       alt="Kumbung Jamur"
     />
   </div>
 
-  <!-- Kotak kecil -->
-  <div class="absolute bottom-0 left-0 translate-y-1/2 bg-white p-6 rounded-xl shadow-lg border border-outline-variant/30 max-w-[200px]">
+  <!-- Kotak kecil (hanya tampil pada layar md ke atas) -->
+  <div class="hidden md:block absolute bottom-0 left-0 translate-y-1/2 bg-white p-6 rounded-xl shadow-lg border border-outline-variant/30 max-w-[200px]">
     <div class="font-headline-md text-headline-md text-primary">7+</div>
     <div class="font-label-sm text-label-sm text-on-surface-variant">
       Tahun Pengalaman Operasional
@@ -508,6 +519,10 @@ Berawal dari skala budidaya kecil, HDSF Mushroom terus berkembang melalui inovas
   </div>
 </footer>
 <script>
+document.getElementById('hamburger-btn').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
 function filterGallery(category, button) {
 
   const items = document.querySelectorAll('.gallery-item');
