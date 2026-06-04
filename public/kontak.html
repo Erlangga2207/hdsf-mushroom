@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hubungi Kami - HDSF Mushroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-bright": "#fbf9f8",
+          "outline-variant": "#c2c9bb",
+          "secondary": "#5d5f5b",
+          "on-background": "#1b1c1c",
+          "on-secondary": "#ffffff",
+          "tertiary-container": "#4f5149",
+          "secondary-fixed-dim": "#c6c7c2",
+          "on-tertiary": "#ffffff",
+          "on-error": "#ffffff",
+          "surface-dim": "#dcd9d9",
+          "on-primary": "#ffffff",
+          "surface-tint": "#3b6934",
+          "on-primary-container": "#9dd090",
+          "surface-container-lowest": "#ffffff",
+          "secondary-container": "#f5f5f0",
+          "on-primary-fixed": "#002201",
+          "error": "#ba1a1a",
+          "on-tertiary-container": "#c3c3b9",
+          "on-error-container": "#93000a",
+          "inverse-surface": "#303030",
+          "primary-fixed": "#bcf0ae",
+          "tertiary": "#383a32",
+          "surface": "#fbf9f8",
+          "outline": "#72796e",
+          "surface-container-highest": "#e4e2e1",
+          "on-secondary-container": "#62635f",
+          "inverse-on-surface": "#f3f0f0",
+          "on-primary-fixed-variant": "#23501e",
+          "surface-container-high": "#eae8e7",
+          "primary": "#2d5a27",
+          "tertiary-fixed": "#e3e3d8",
+          "primary-fixed-dim": "#a1d494",
+          "on-tertiary-fixed-variant": "#46483f",
+          "background": "#fbf9f8",
+          "surface-container": "#f0eded",
+          "surface-variant": "#e4e2e1",
+          "tertiary-fixed-dim": "#c7c7bd",
+          "on-secondary-fixed": "#1a1c19",
+          "on-secondary-fixed-variant": "#454744",
+          "inverse-primary": "#a1d494",
+          "surface-container-low": "#f6f3f2",
+          "on-surface": "#1b1c1c",
+          "secondary-fixed": "#e3e3de",
+          "on-surface-variant": "#42493e",
+          "error-container": "#ffdad6",
+          "primary-container": "#2d5a27",
+          "on-tertiary-fixed": "#1b1c16",
+          "neutral": "#333333"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "xl": "80px",
+          "sm": "12px",
+          "gutter": "24px",
+          "margin-desktop": "64px",
+          "margin-mobile": "16px",
+          "lg": "48px",
+          "xs": "4px",
+          "md": "24px",
+          "base": "8px"
+        },
+        "fontFamily": {
+          "body-md": ["Manrope"],
+          "label-md": ["Manrope"],
+          "headline-md": ["Manrope"],
+          "headline-lg-mobile": ["Manrope"],
+          "body-lg": ["Manrope"],
+          "headline-xl": ["Manrope"],
+          "headline-lg": ["Manrope"],
+          "label-sm": ["Manrope"]
+        },
+        "fontSize": {
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .glass-effect {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm sticky top-0 z-50">
+  <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
+  <a href="beranda.html">
+    <img 
+      src="image/logo.png" 
+      alt="HDSF Mushroom Logo" 
+      class="h-14 w-auto object-contain"
+    />
+  </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="beranda.html">Beranda</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="produk.html">Produk</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="tentang.html">Tentang</a>
+      <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="kontak.html">Kontak</a>
+    </div>
+    <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform shadow-md">
+      <a href="https://api.whatsapp.com/send/?phone=6282119017471&text&type=phone_number&app_absent=0" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm">Hubungi Kami</a>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="relative min-h-[500px] flex items-center justify-center text-center px-gutter py-24 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img class="w-full h-full object-cover opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFxwB7zkwn6MKYRHU4Riyzb9NsSJc4HuoqfCvRNsVojy3kVfYJLzwJmlfL5Ky1xWvX2bdOt-WXP3Dc84-eWGaJTwSDBXlmbOS_MN5LwFO0HWrHel74xMPsG2NAiaxVlUrGU65Qvtor7tglBwEnqTb1UG0-aCYbKSbkQQalLW4DdOH86Zns_SCKgGWTjEwJRkMkPSVuuzNZITap0fn_EktG7-ftJF-CZ1PZnM0sxiJOTcsDu6y7uYO-QiJ8btc7N3l0jPBlcFZgJVU" alt=""/>
+    <div class="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background"></div>
+  </div>
+  <div class="relative z-10 max-w-3xl">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container mb-6 shadow-sm border border-outline-variant/20">
+      <span class="material-symbols-outlined text-[18px]">support_agent</span>
+      <span class="font-label-md text-label-md">Customer Service</span>
+    </div>
+    <h1 class="font-headline-xl text-headline-xl mb-4">
+      Hubungi <span class="text-primary">Kami</span>
+    </h1>
+    <p class="text-on-surface-variant font-body-lg text-body-lg mb-8 leading-relaxed">
+      Tim kami siap membantu Anda dengan pertanyaan seputar produk jamur, kemitraan bisnis, atau informasi operasional. Respon cepat dalam 24 jam.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+  <!-- WhatsApp -->
+  <a href="https://api.whatsapp.com/send/?phone=6282119017471&text&type=phone_number&app_absent=0"
+     target="_blank"
+     class="bg-primary text-on-primary px-8 py-4 rounded-full flex items-center justify-center gap-2 font-label-md text-label-md shadow-lg hover:brightness-110 transition-all scale-95 active:scale-90">
+
+    <span class="material-symbols-outlined">chat</span>
+    Tanya via WhatsApp
+  </a>
+       <!-- Scroll ke form -->
+  <a href="#form-kontak"
+     class="border-2 border-secondary text-secondary px-8 py-4 rounded-full flex items-center justify-center gap-2 font-label-md text-label-md hover:bg-secondary-container transition-all scale-95 active:scale-90">
+
+    <span class="material-symbols-outlined">send</span>
+    Kirim Pesan
+  </a>
+
+</div>
+  </div>
+</header>
+
+<!-- Main Content: Form & Sidebar -->
+<section id="form-kontak" class="max-w-7xl mx-auto px-gutter pb-24">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <!-- Contact Form -->
+    <!-- Contact Form -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-sm border border-outline-variant/30">
+
+  <div class="flex items-center gap-3 mb-8">
+    <span class="material-symbols-outlined text-primary text-[32px]">edit_note</span>
+    <h2 class="font-headline-lg text-headline-lg">Kirim Pesan</h2>
+  </div>
+
+  <p class="text-on-surface-variant font-body-md text-body-md mb-8">
+    Isi form di bawah ini dan kami akan menghubungi Anda segera untuk diskusi lebih lanjut.
+  </p>
+
+  <!-- INI YANG DIGANTI -->
+  <form id="contactForm" class="space-y-6">
+
+    <!-- isi input -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface">Nama Lengkap <span class="text-primary">*</span></label>
+            <input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/40" placeholder="Nama lengkap Anda" type="text"/>
+            <p class="text-label-sm text-label-sm text-on-surface-variant/60">Masukkan nama lengkap sesuai identitas</p>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface">Email <span class="text-primary">*</span></label>
+            <input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/40" placeholder="email@example.com" type="email"/>
+            <p class="text-label-sm text-label-sm text-on-surface-variant/60">Email aktif untuk konfirmasi</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface">Nomor WhatsApp</label>
+            <input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/40" placeholder="+62 812-3456-7890" type="tel"/>
+            <p class="text-label-sm text-label-sm text-on-surface-variant/60">Opsional, untuk komunikasi lebih cepat</p>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface">Subjek <span class="text-primary">*</span></label>
+            <select class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-on-surface-variant">
+              <option>Pemesanan Produk</option>
+              <option>Kunjungan Fasilitas</option>
+              <option>Kemitraan Bisnis</option>
+              <option>Lainnya</option>
+            </select>
+            <p class="text-label-sm text-label-sm text-on-surface-variant/60">Topik utama pertanyaan Anda</p>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="font-label-md text-label-md text-on-surface">Pesan <span class="text-primary">*</span></label>
+          <textarea class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/40" placeholder="Tuliskan detail pertanyaan atau kebutuhan Anda di sini..." rows="5"></textarea>
+          <p class="text-label-sm text-label-sm text-on-surface-variant/60">Jelaskan secara detail agar kami dapat memberikan jawaban yang tepat</p>
+        </div>
+        <button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 shadow-md hover:brightness-110 transition-all" type="submit">
+          <span class="material-symbols-outlined">send</span>
+          Kirim Pesan
+        </button>
+        <p class="text-center font-label-sm text-label-sm text-on-surface-variant/70">
+          Dengan mengirim pesan, Anda menyetujui kebijakan privasi kami
+        </p>
+      </form>
+    </div>
+
+    <!-- Sidebar Info -->
+    <div class="lg:col-span-5 space-y-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="material-symbols-outlined text-secondary text-[32px]">contact_page</span>
+        <h2 class="font-headline-lg text-headline-lg">Informasi Kontak</h2>
+      </div>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="flex items-start gap-4 p-5 bg-surface-container-low border border-outline-variant/30 rounded-xl hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+            <span class="material-symbols-outlined">call</span>
+          </div>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface">Telepon / WhatsApp</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Hubungi kami via WhatsApp untuk respon lebih cepat</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-5 bg-surface-container-low border border-outline-variant/30 rounded-xl hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+            <span class="material-symbols-outlined">mail</span>
+          </div>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface">Email</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">info@hdsfmushroom.com</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-5 bg-surface-container-low border border-outline-variant/30 rounded-xl hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+            <span class="material-symbols-outlined">location_on</span>
+          </div>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface">Alamat</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">8QQ2+VF5, Banjaran Tengah, Bojongloa, Kec. Kasomalang, Kabupaten Subang, Jawa Barat 41286</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-5 bg-surface-container-low border border-outline-variant/30 rounded-xl hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+            <span class="material-symbols-outlined">schedule</span>
+          </div>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface">Jam Operasional</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Senin - Jumat: 08:00 - 17:00 WIB<br/>Sabtu: 08:00 - 15:00 WIB</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maps Section -->
+      <div class="mt-8 space-y-4">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary">pin_drop</span>
+          <h3 class="font-label-md text-label-md">Lokasi Kami</h3>
+        </div>
+        <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-outline-variant/30 shadow-inner group">
+          <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5559488!2d107.7486506!3d-6.6603527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e692337260e7bfb%3A0x96b49c655730197a!2sJamur%20Muncul%20Jaya%20Makmur!5e0!3m2!1sid!2sid!4v1"
+  width="100%" height="100%"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  class="w-full h-full">
+</iframe>
+        <span class="material-symbols-outlined text-primary text-[16px]">open_in_new</span>
+              <span class="font-label-sm text-label-sm text-on-surface">Buka di Maps</span>
+            </a>
+          </div>
+        </div>
+        <div class="bg-primary-fixed/20 p-4 rounded-xl flex items-start gap-3 border border-primary/10">
+          <span class="material-symbols-outlined text-primary">chat</span>
+          <div>
+            <p class="text-label-sm text-label-sm text-primary font-bold">WhatsApp 24/7 untuk bantuan cepat</p>
+            <p class="text-label-sm text-label-sm text-on-primary-fixed-variant">Respon cepat di luar jam kantor melalui bot asisten kami.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="bg-surface-container-low py-24">
+  <div class="max-w-7xl mx-auto px-gutter">
+    <div class="text-center mb-16">
+      <h2 class="font-headline-lg text-headline-lg mb-4">Pertanyaan Umum</h2>
+      <p class="text-on-surface-variant font-body-md text-body-md">Jawaban cepat untuk pertanyaan yang sering diajukan</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 hover:shadow-md transition-all">
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Berapa lama waktu respons?</h4>
+        <p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+          Kami merespons dalam 1-24 jam untuk email dan instan untuk WhatsApp saat jam operasional.
+        </p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 hover:shadow-md transition-all">
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Bisakah konsultasi gratis?</h4>
+        <p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+          Ya, konsultasi awal mengenai produk dan kemitraan sepenuhnya gratis tanpa biaya tambahan.
+        </p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 hover:shadow-md transition-all">
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Apakah bisa kunjungan langsung?</h4>
+        <p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+          Tentu! Silakan buat janji terlebih dahulu melalui WhatsApp untuk mengatur waktu yang tepat bagi kunjungan Anda ke fasilitas kami.
+        </p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 hover:shadow-md transition-all">
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Bagaimana cara memesan?</h4>
+        <p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+          Hubungi kami via WhatsApp atau isi form kontak, tim kami akan memandu proses pemesanan dan pengiriman Anda.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom CTA Bar -->
+<div class="bg-primary text-on-primary py-12">
+  <div class="max-w-7xl mx-auto px-gutter text-center">
+    <h3 class="font-headline-md text-headline-md mb-6 max-w-4xl mx-auto">Jangan ragu untuk menghubungi kami. Tim customer service kami siap membantu memenuhi kebutuhan produk jamur berkualitas Anda.</h3>
+    <div class="flex flex-wrap justify-center gap-6 items-center">
+      <!-- WhatsApp Button -->
+      <a 
+        href="https://api.whatsapp.com/send/?phone=6282119017471&text&type=phone_number&app_absent=0"
+        target="_blank"
+        class="bg-on-primary text-primary px-8 py-3 rounded-full flex items-center gap-2 font-label-md text-label-md hover:brightness-95 transition-colors"
+      >
+        <span class="material-symbols-outlined">chat</span>
+        Chat WhatsApp
+      </a>
+      <!--Produk-->
+      <a href="produk.html" class="border-2 border-on-primary text-on-primary px-8 py-3 rounded-full flex items-center gap-2 font-label-md text-label-md hover:bg-on-primary/10 transition-colors">
+        Lihat Produk
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-8 mt-10 text-on-primary/80">
+      <div class="flex items-center gap-2 font-label-sm text-label-sm">
+        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        Respons Cepat 24 Jam
+      </div>
+      <div class="flex items-center gap-2 font-label-sm text-label-sm">
+        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        Layanan Ramah
+      </div>
+      <div class="flex items-center gap-2 font-label-sm text-label-sm">
+        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        Customer Service Berpengalaman
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<!-- Footer -->
+<footer class="bg-inverse-surface text-surface-variant py-section-gap">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full px-gutter max-w-container-max mx-auto">
+    <div>
+      <img 
+  src="image/logo.png" 
+  alt="HDSF Mushroom" 
+  class="w-24 h-24 object-contain mb-4"
+/>
+<p class="text-body-md opacity-80 mb-6">Produsen jamur tiram berkualitas tinggi dengan komitmen pada kesegaran dan kepuasan pelanggan di setiap panen.</p>
+      <div class="flex gap-4">
+        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+          <span class="material-symbols-outlined text-[20px]">social_leaderboard</span>
+        </a>
+        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+          <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h5 class="text-primary-fixed font-bold mb-6">Navigasi Cepat</h5>
+      <ul class="space-y-3 font-label-md">
+        <li><a class="hover:text-primary-fixed transition-colors" href="beranda.html">Beranda</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="produk.html">Produk</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="tentang.html">Tentang Kami</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-label-md text-label-md text-primary-fixed mb-6 uppercase tracking-widest">Produk Kami</h4>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Jamur Tiram Putih</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Jamur Tiram Cokelat</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Bibit F1</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Bibit F2</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-primary-fixed font-bold mb-6">Kontak Kami</h5>
+      <ul class="space-y-4 font-label-md">
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-primary-fixed">
+      location_on
+    </span>
+
+    <a 
+      href="https://share.google/Xf4Ib56LQp6OHUOcy"
+      target="_blank"
+      class="font-body-md text-body-md opacity-80 hover:text-green-700 hover:underline"
+    >
+      8QQ2+VF5, Banjaran Tengah, Bojongloa, Kec. Kasomalang,
+      Kabupaten Subang, Jawa Barat 41286
+    </a>
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-primary-fixed">schedule</span>
+          <span>09:00 - 17:00 WIB</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/10 text-label-sm opacity-60 text-center">
+    © 2026 HDSF Mushroom. All rights reserved.
+  </div>
+</footer>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const nama = document.querySelector('input[type="text"]').value;
+  const email = document.querySelector('input[type="email"]').value;
+  const whatsapp = document.querySelector('input[type="tel"]').value;
+  const subjek = document.querySelector('select').value;
+  const pesan = document.querySelector('textarea').value;
+
+  const nomorAdmin = "6282119017471";
+
+  const text = `Halo HDSF Mushroom,%0A%0A
+Nama: ${nama}%0A
+Email: ${email}%0A
+WhatsApp: ${whatsapp}%0A
+Subjek: ${subjek}%0A
+Pesan: ${pesan}`;
+
+  window.open(`https://wa.me/${nomorAdmin}?text=${text}`, '_blank');
+});
+</script>
+
+</body>
+</body>
+</html>

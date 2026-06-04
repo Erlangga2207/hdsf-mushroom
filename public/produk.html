@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Produk | HDSF Mushroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-bright": "#fbf9f8",
+          "outline-variant": "#c2c9bb",
+          "secondary": "#5d5f5b",
+          "on-background": "#1b1c1c",
+          "on-secondary": "#ffffff",
+          "tertiary-container": "#4f5149",
+          "secondary-fixed-dim": "#c6c7c2",
+          "on-tertiary": "#ffffff",
+          "on-error": "#ffffff",
+          "surface-dim": "#dcd9d9",
+          "on-primary": "#ffffff",
+          "surface-tint": "#2D5A27",
+          "on-primary-container": "#9dd090",
+          "surface-container-lowest": "#ffffff",
+          "secondary-container": "#f5f5f0",
+          "on-primary-fixed": "#002201",
+          "error": "#ba1a1a",
+          "on-tertiary-container": "#c3c3b9",
+          "on-error-container": "#93000a",
+          "inverse-surface": "#333333",
+          "primary-fixed": "#bcf0ae",
+          "tertiary": "#e0e0d5",
+          "surface": "#fbf9f8",
+          "outline": "#72796e",
+          "surface-container-highest": "#e4e2e1",
+          "on-secondary-container": "#333333",
+          "inverse-on-surface": "#f3f0f0",
+          "on-primary-fixed-variant": "#2D5A27",
+          "surface-container-high": "#eae8e7",
+          "primary": "#2D5A27",
+          "tertiary-fixed": "#e3e3d8",
+          "primary-fixed-dim": "#a1d494",
+          "on-tertiary-fixed-variant": "#46483f",
+          "background": "#fbf9f8",
+          "surface-container": "#f0eded",
+          "surface-variant": "#e4e2e1",
+          "tertiary-fixed-dim": "#c7c7bd",
+          "on-secondary-fixed": "#1a1c19",
+          "on-secondary-fixed-variant": "#454744",
+          "inverse-primary": "#a1d494",
+          "surface-container-low": "#f6f3f2",
+          "on-surface": "#1b1c1c",
+          "secondary-fixed": "#e3e3de",
+          "on-surface-variant": "#42493e",
+          "error-container": "#ffdad6",
+          "primary-container": "#2D5A27",
+          "on-tertiary-fixed": "#1b1c16"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "xl": "80px",
+          "sm": "12px",
+          "gutter": "24px",
+          "margin-desktop": "64px",
+          "margin-mobile": "16px",
+          "lg": "48px",
+          "xs": "4px",
+          "md": "24px",
+          "base": "8px",
+          "section-gap": "80px",
+          "container-max": "1280px"
+        },
+        "fontFamily": {
+          "body-md": ["Manrope"],
+          "label-sm": ["Manrope"],
+          "label-md": ["Manrope"],
+          "headline-md": ["Manrope"],
+          "body-lg": ["Manrope"],
+          "headline-xl": ["Manrope"],
+          "headline-lg": ["Manrope"],
+          "headline-lg-mobile": ["Manrope"]
+        },
+        "fontSize": {
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+          "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+
+<!-- Top Navigation Bar -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
+  <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
+  <a href="beranda.html">
+    <img 
+      src="image/logo.png" 
+      alt="HDSF Mushroom Logo" 
+      class="h-14 w-auto object-contain"
+    />
+  </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="beranda.html">Beranda</a>
+      <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="produk.html">Produk</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="tentang.html">Tentang</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="kontak.html">Kontak</a>
+    </div>
+    <div class="md:hidden">
+      <span class="material-symbols-outlined text-primary">menu</span>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface-container-low py-section-gap">
+  <div class="absolute inset-0 z-0">
+    <img alt="Professional mushroom cultivation facility" class="w-full h-full object-cover opacity-40" 
+    img class="w-full h-full object-cover"
+    src="image/foto_beranda.jpeg" 
+    alt="Jamur Baru">
+  </div>
+  <div class="relative z-10 max-w-container-max mx-auto px-gutter text-center">
+    <span class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mb-6 border border-outline-variant/30">
+      <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+      Produk Premium
+    </span>
+    <h1 class="font-headline-xl text-headline-xl mb-4">Produk <br/><span class="text-primary">Jamur Tiram Premium</span></h1>
+    <p class="max-w-2xl mx-auto text-on-surface-variant font-body-lg text-body-lg mb-8">
+      Dari jamur segar berkualitas tinggi hingga bibit unggul dan starter kit lengkap. Semua kebutuhan budidaya jamur tiram Anda tersedia di sini.
+    </p>
+    <div class="flex flex-wrap justify-center gap-6 mb-10">
+      <div class="flex items-center gap-2 text-on-surface-variant">
+        <span class="material-symbols-outlined text-primary">check_circle</span>
+        <span class="font-label-md">Organik 100%</span>
+      </div>
+      <div class="flex items-center gap-2 text-on-surface-variant">
+        <span class="material-symbols-outlined text-primary">verified</span>
+        <span class="font-label-md">Garansi Kualitas</span>
+      </div>
+      <div class="flex items-center gap-2 text-on-surface-variant">
+        <span class="material-symbols-outlined text-primary">local_shipping</span>
+        <span class="font-label-md">Pengiriman Aman</span>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <a href="#kategori-produk"
+    class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+        Lihat Produk
+    <span class="material-symbols-outlined">
+        arrow_forward
+    </span>
+    </a>
+      <a href="kontak.html" class="bg-surface border border-outline px-8 py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all">
+        <span class="material-symbols-outlined">forum</span> Konsultasi
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Product Category & Grid -->
+<section id="kategori-produk" class="py-section-gap max-w-container-max mx-auto px-gutter">
+
+<div class="flex flex-wrap justify-center gap-3 mb-12">
+
+  <button onclick="filterProduk('all', this)"
+    class="filter-btn active px-6 py-3 rounded-full bg-primary text-white flex items-center gap-2 font-label-md shadow-sm">
+
+    <span class="material-symbols-outlined">
+      grid_view
+    </span>
+
+    Semua Produk
+  </button>
+
+  <button onclick="filterProduk('jamur', this)"
+    class="filter-btn px-6 py-3 rounded-full bg-white border border-outline-variant text-on-surface flex items-center gap-2 font-label-md">
+
+    <span class="material-symbols-outlined text-secondary">
+      eco
+    </span>
+
+    Jamur Tiram Segar
+  </button>
+
+  <button onclick="filterProduk('bibit', this)"
+    class="filter-btn px-6 py-3 rounded-full bg-white border border-outline-variant text-on-surface flex items-center gap-2 font-label-md">
+
+    <span class="material-symbols-outlined text-secondary">
+      science
+    </span>
+
+    Bibit & Kultur
+  </button>
+</div>
+
+
+<!-- Product Grid -->
+<div class="flex flex-wrap justify-center gap-8">
+  <!-- JAMUR -->
+  <div class="produk jamur bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-shadow group w-full max-w-[300px]">
+    <div class="h-56 overflow-hidden">
+      <img class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+      src="image/jmr_putih.jpg">
+    </div>
+
+    <div class="p-6">
+      <h3 class="text-[20px] mb-2">Jamur Tiram Putih</h3>
+
+      <p class="text-on-surface-variant mb-4">
+        Jamur tiram putih segar dan familiar.
+      </p>
+
+      <div class="text-primary font-bold text-lg mb-6">
+        Rp 25.000 / kg
+      </div>
+
+      <a href="https://api.whatsapp.com/send/?phone=6282119017471&text=Saya%20ingin%20memesan%20Jamur%20Tiram%20Putih&type=phone_number&app_absent=0"
+target="_blank"
+class="w-full block text-center py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-all">
+  Pesan via WhatsApp
+</a>
+    </div>
+
+  </div>
+
+  <!-- JAMUR -->
+  <div class="produk jamur bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-shadow group w-full max-w-[300px]">
+    <div class="h-56 overflow-hidden">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      src="image/jmr_coklat.jpg">
+    </div>
+
+    <div class="p-6">
+      <h3 class="text-[20px] mb-2">
+        Jamur Tiram Cokelat
+      </h3>
+
+      <p class="text-on-surface-variant mb-4">
+        Jamur cokelat premium berkualitas.
+      </p>
+
+      <div class="text-primary font-bold text-lg mb-6">
+        Rp 30.000 / kg
+      </div>
+
+      <a href="https://api.whatsapp.com/send/?phone=6282119017471&text=Saya%20ingin%20memesan%20Jamur%20Tiram%20Cokelat&type=phone_number&app_absent=0"
+target="_blank"
+class="w-full block text-center py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-all">
+  Pesan via WhatsApp
+</a>
+    </div>
+
+  </div>
+
+  <!-- BIBIT -->
+  <div class="produk bibit bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+    <div class="h-56 overflow-hidden">
+      <img class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+      src="image/f1.jpeg">
+    </div>
+
+    <div class="p-6">
+      <h3 class="text-[20px] mb-2">
+        F1 - Bibit Jagung
+      </h3>
+
+      <p class="text-on-surface-variant mb-4">
+        bibit dari biakan murni (F0).
+      </p>
+
+      <div class="text-primary font-bold text-lg mb-6">
+        Rp 200.000 / cawan
+      </div>
+
+      <a href="https://api.whatsapp.com/send/?phone=6282119017471&text=Saya%20ingin%20memesan%20Bibit%20F1%20Jamur%20Tiram&type=phone_number&app_absent=0"
+target="_blank"
+class="w-full block text-center py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-all">
+  Pesan via WhatsApp
+</a>
+    </div>
+
+  </div>
+
+    <!-- BIBIT -->
+  <div class="produk bibit bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-shadow group w-full max-w-[300px]">
+    
+    <div class="h-56 overflow-hidden">
+      <img class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+      src="image/f2.jpeg">
+    </div>
+
+    <div class="p-6">
+      <h3 class="text-[20px] mb-2">
+        F2 - Bibit Milet
+      </h3>
+
+      <p class="text-on-surface-variant mb-4">
+        turunan dari F1 menggunakan media seperti biji-bijian atau serbuk gergaji.
+      </p>
+
+      <div class="text-primary font-bold text-lg mb-6">
+        Rp 4.000 / baglog
+      </div>
+
+      <a href="https://api.whatsapp.com/send/?phone=6282119017471&text=Saya%20ingin%20memesan%20Bibit%20F2%20Jamur%20Tiram&type=phone_number&app_absent=0"
+target="_blank"
+class="w-full block text-center py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-all">
+  Pesan via WhatsApp
+</a>
+    </div>
+
+  </div> <!-- PENUTUP CARD BIBIT -->
+
+  <!-- BAGLOG -->
+  <div class="produk baglog bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-shadow group w-full max-w-[300px]">
+    
+    <div class="h-56 overflow-hidden">
+      <img class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+      src="image/baglog.jpeg">
+    </div>
+
+    <div class="p-6">
+      <h3 class="text-[20px] mb-2">
+        Baglog Jamur
+      </h3>
+
+      <p class="text-on-surface-variant mb-4">
+        media tanam yang dibungkus berisi campuran serbuk gergaji kayu, dedak/bekatul, kapur, dan air.
+      </p>
+
+      <div class="text-primary font-bold text-lg mb-6">
+        Rp 4.000 / baglog
+      </div>
+
+     <a href="https://api.whatsapp.com/send/?phone=6282119017471&text=Saya%20ingin%20memesan%20Baglog%20Jamur&type=phone_number&app_absent=0"
+target="_blank"
+class="w-full block text-center py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-all">
+  Pesan via WhatsApp
+</a>
+    </div>
+
+  </div>
+
+<!-- Why Choose Us -->
+<section class="bg-surface-container py-section-gap">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16">
+      <h2 class="font-headline-lg text-headline-lg mb-4">Mengapa Memilih Produk Kami?</h2>
+      <p class="max-w-2xl mx-auto text-on-surface-variant">Komitmen kami pada kualitas dan kepuasan pelanggan menjadikan produk HDSF Mushroom pilihan terbaik untuk budidaya jamur tiram.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="text-center group">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+          <span class="material-symbols-outlined text-3xl">verified</span>
+        </div>
+        <h4 class="font-bold mb-2">Kualitas Terjamin</h4>
+        <p class="text-on-surface-variant text-label-sm">Semua produk melalui kontrol kualitas ketat standar internasional.</p>
+      </div>
+      <div class="text-center group">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+          <span class="material-symbols-outlined text-3xl">local_shipping</span>
+        </div>
+        <h4 class="font-bold mb-2">Pengiriman Cepat</h4>
+        <p class="text-on-surface-variant text-label-sm">Pengiriman same-day untuk area Jawa Barat.</p>
+      </div>
+      <div class="text-center group">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+          <span class="material-symbols-outlined text-3xl">headset_mic</span>
+        </div>
+        <h4 class="font-bold mb-2">Support 24/7</h4>
+        <p class="text-on-surface-variant text-label-sm">Tim customer service siap membantu Anda kapan saja via WhatsApp.</p>
+      </div>
+      <div class="text-center group">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+          <span class="material-symbols-outlined text-3xl">payments</span>
+        </div>
+        <h4 class="font-bold mb-2">Harga Kompetitif</h4>
+        <p class="text-on-surface-variant text-label-sm">Harga terbaik di kelasnya dengan kualitas premium yang konsisten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-section-gap max-w-3xl mx-auto px-gutter">
+  <div class="text-center mb-12">
+    <h2 class="font-headline-lg text-headline-lg mb-2">Frequently Asked Questions</h2>
+    <p class="text-on-surface-variant">Pertanyaan yang sering diajukan tentang produk jamur tiram kami.</p>
+  </div>
+  <div class="space-y-4">
+    <div class="border border-outline-variant rounded-xl overflow-hidden bg-white">
+
+  <button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between p-5 text-left font-bold hover:bg-surface-container-low transition-colors">
+
+    <span>Berapa lama jamur tiram segar dapat bertahan?</span>
+
+    <span class="material-symbols-outlined transition-transform duration-300">
+      expand_more
+    </span>
+
+  </button>
+
+  <div class="faq-answer hidden px-5 pb-5 text-on-surface-variant">
+    Jamur tiram segar dapat bertahan sekitar 3–5 hari di dalam kulkas dengan penyimpanan yang baik.
+  </div>
+
+    <div class="border border-outline-variant rounded-xl overflow-hidden bg-white">
+
+  <div class="border border-outline-variant rounded-xl overflow-hidden bg-white">
+
+  <button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between p-5 text-left font-bold hover:bg-surface-container-low transition-colors">
+
+    <span>Apa perbedaan bibit F0, F1, F2, dan F3?</span>
+
+    <span class="material-symbols-outlined transition-transform duration-300">
+      expand_more
+    </span>
+
+  </button>
+
+  <div class="faq-answer hidden px-5 pb-5 text-on-surface-variant">
+    - F1 jagung = bibit induk awal, nutrisi tinggi, pertumbuhan kuat. <br>
+    - F2 milet = bibit lanjutan untuk memperbanyak sebelum masuk baglog.
+  </div>
+
+</div>
+
+  <button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between p-5 text-left font-bold hover:bg-surface-container-low transition-colors">
+
+    <span>Berapa lama waktu panen jamur dari baglog?</span>
+
+    <span class="material-symbols-outlined transition-transform duration-300">
+      expand_more
+    </span>
+
+  </button>
+
+  <div class="faq-answer hidden px-5 pb-5 text-on-surface-variant">
+    Baglog jamur biasanya mulai menghasilkan panen pertama sekitar 30–40 hari setelah proses inkubasi selesai.
+  </div>
+  
+    <div class="border border-outline-variant rounded-xl overflow-hidden bg-white">
+
+  <button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between p-5 text-left font-bold hover:bg-surface-container-low transition-colors">
+
+    <span>Mengapa bibit jamur harus disimpan di tempat steril?</span>
+
+    <span class="material-symbols-outlined transition-transform duration-300">
+      expand_more
+    </span>
+
+  </button>
+
+  <div class="faq-answer hidden px-5 pb-5 text-on-surface-variant">
+    Karena bibit jamur sangat mudah terkontaminasi oleh bakteri atau jamur liar. Penyimpanan di tempat steril membantu menjaga kualitas miselium agar tetap sehat, tumbuh optimal, dan siap digunakan untuk budidaya.
+  </div>
+  </div>
+</section>
+
+<!-- Mid-CTA Banner -->
+<section class="bg-primary py-12">
+  <div class="max-w-container-max mx-auto px-gutter text-center text-on-primary">
+    <p class="font-label-md mb-6 opacity-90">Tim ahli kami siap membantu Anda memilih produk yang tepat sesuai kebutuhan budidaya atau konsumsi Anda. Konsultasi gratis untuk semua pelanggan.</p>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+      <a href="kontak.html" class="bg-white text-primary px-8 py-3.5 rounded-full font-bold flex items-center gap-2 hover:bg-surface transition-all">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span> Konsultasi Via WhatsApp
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-8 mt-8 opacity-70 text-[14px]">
+      <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">check_circle</span> Konsultasi Gratis</div>
+      <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">check_circle</span> Garansi Kualitas</div>
+      <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">check_circle</span> Pengiriman Aman</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-inverse-surface text-surface-variant py-section-gap">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full px-gutter max-w-container-max mx-auto">
+    <div>
+      <img 
+  src="image/logo.png" 
+  alt="HDSF Mushroom" 
+  class="w-24 h-24 object-contain mb-4"
+/>
+<p class="text-body-md opacity-80 mb-6">Produsen jamur tiram berkualitas tinggi dengan komitmen pada kesegaran dan kepuasan pelanggan di setiap panen.</p>
+      <div class="flex gap-4">
+        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+          <span class="material-symbols-outlined text-[20px]">social_leaderboard</span>
+        </a>
+        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+          <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h5 class="text-primary-fixed font-bold mb-6">Navigasi Cepat</h5>
+      <ul class="space-y-3 font-label-md">
+        <li><a class="hover:text-primary-fixed transition-colors" href="beranda.html">Beranda</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="produk.html">Produk</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="tentang.html">Tentang Kami</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-label-md text-label-md text-primary-fixed mb-6 uppercase tracking-widest">Produk Kami</h4>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Jamur Tiram Putih</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Jamur Tiram Cokelat</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Bibit F1</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Bibit F2</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-primary-fixed font-bold mb-6">Kontak Kami</h5>
+      <ul class="space-y-4 font-label-md">
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-primary-fixed">
+      location_on
+    </span>
+
+    <a 
+      href="https://share.google/Xf4Ib56LQp6OHUOcy"
+      target="_blank"
+      class="font-body-md text-body-md opacity-80 hover:text-green-700 hover:underline"
+    >
+      8QQ2+VF5, Banjaran Tengah, Bojongloa, Kec. Kasomalang,
+      Kabupaten Subang, Jawa Barat 41286
+    </a>
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-primary-fixed">schedule</span>
+          <span>09:00 - 17:00 WIB</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/10 text-label-sm opacity-60 text-center">
+    © 2026 HDSF Mushroom. All rights reserved.
+  </div>
+</footer>
+<script>
+
+function filterProduk(kategori, tombol) {
+
+  let produk = document.querySelectorAll('.produk');
+  let buttons = document.querySelectorAll('.filter-btn');
+
+  // RESET BUTTON
+  buttons.forEach(function(btn) {
+
+    btn.classList.remove('bg-primary', 'text-white');
+
+    btn.classList.add('bg-white');
+
+  });
+
+  // BUTTON AKTIF
+  tombol.classList.remove('bg-white');
+
+  tombol.classList.add('bg-primary', 'text-white');
+
+  // FILTER PRODUK
+  produk.forEach(function(item) {
+
+    if (kategori === 'all') {
+
+      item.style.display = '';
+
+    }
+
+    else if (item.classList.contains(kategori)) {
+
+      item.style.display = '';
+
+    }
+
+    else {
+
+      item.style.display = 'none';
+
+    }
+
+  });
+
+}
+
+
+
+function toggleFAQ(button) {
+
+  const answer = button.nextElementSibling;
+  const icon = button.querySelector('.material-symbols-outlined');
+
+  answer.classList.toggle('hidden');
+
+  icon.classList.toggle('rotate-180');
+
+}
+
+</script>
+</body>
+</html>
+</body>
+</html>

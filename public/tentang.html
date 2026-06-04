@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tentang Kami | HDSF Mushroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-bright": "#fbf9f8",
+          "outline-variant": "#c2c9bb",
+          "secondary": "#5d5f5b",
+          "on-background": "#1b1c1c",
+          "on-secondary": "#ffffff",
+          "tertiary-container": "#4f5149",
+          "secondary-fixed-dim": "#c6c7c2",
+          "on-tertiary": "#ffffff",
+          "on-error": "#ffffff",
+          "surface-dim": "#dcd9d9",
+          "on-primary": "#ffffff",
+          "surface-tint": "#3b6934",
+          "on-primary-container": "#9dd090",
+          "surface-container-lowest": "#ffffff",
+          "secondary-container": "#e0e0db",
+          "on-primary-fixed": "#002201",
+          "error": "#ba1a1a",
+          "on-tertiary-container": "#c3c3b9",
+          "on-error-container": "#93000a",
+          "inverse-surface": "#303030",
+          "primary-fixed": "#bcf0ae",
+          "tertiary": "#383a32",
+          "surface": "#fbf9f8",
+          "outline": "#72796e",
+          "surface-container-highest": "#e4e2e1",
+          "on-secondary-container": "#62635f",
+          "inverse-on-surface": "#f3f0f0",
+          "on-primary-fixed-variant": "#23501e",
+          "surface-container-high": "#eae8e7",
+          "primary": "#2D5A27",
+          "tertiary-fixed": "#e3e3d8",
+          "primary-fixed-dim": "#a1d494",
+          "on-tertiary-fixed-variant": "#46483f",
+          "background": "#fbf9f8",
+          "surface-container": "#f0eded",
+          "surface-variant": "#e4e2e1",
+          "tertiary-fixed-dim": "#c7c7bd",
+          "on-secondary-fixed": "#1a1c19",
+          "on-secondary-fixed-variant": "#454744",
+          "inverse-primary": "#a1d494",
+          "surface-container-low": "#f6f3f2",
+          "on-surface": "#333333",
+          "secondary-fixed": "#e3e3de",
+          "on-surface-variant": "#42493e",
+          "error-container": "#ffdad6",
+          "primary-container": "#2d5a27",
+          "on-tertiary-fixed": "#1b1c16"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "xl": "80px",
+          "sm": "12px",
+          "gutter": "24px",
+          "margin-desktop": "64px",
+          "margin-mobile": "16px",
+          "lg": "48px",
+          "xs": "4px",
+          "md": "24px",
+          "base": "8px",
+          "section-gap": "5rem",
+          "container-max": "1280px",
+          "stack-lg": "2rem",
+          "stack-sm": "0.5rem",
+          "stack-md": "1rem"
+        },
+        "fontFamily": {
+          "body-md": ["Manrope"],
+          "label-sm": ["Manrope"],
+          "label-md": ["Manrope"],
+          "headline-md": ["Manrope"],
+          "body-lg": ["Manrope"],
+          "headline-xl": ["Manrope"],
+          "headline-lg": ["Manrope"],
+          "headline-lg-mobile": ["Manrope"]
+        },
+        "fontSize": {
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+          "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .backdrop-blur-nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-on-background/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50">
+  <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
+  <a href="beranda.html">
+    <img 
+      src="image/logo.png" 
+      alt="HDSF Mushroom Logo" 
+      class="h-14 w-auto object-contain"
+    />
+  </a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="beranda.html">Beranda</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="produk.html">Produk</a>
+      <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="tentang.html">Tentang</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="kontak.html">Kontak</a>
+    </div>
+    <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform shadow-md">
+      <a href="kontak.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm">Hubungi Kami</a>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<!-- Hero Section -->
+<header class="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-surface-container">
+  <div class="absolute inset-0 z-0">
+    <img class="w-full h-full object-cover opacity-20"
+    src="image/foto_tentang.jpeg"
+    alt="Greenhouse budidaya jamur"/>
+  </div>
+  <div class="relative z-10 max-w-3xl text-center px-gutter">
+    <div class="inline-flex items-center bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full mb-6 font-label-sm text-label-sm">
+      <span class="material-symbols-outlined mr-2 text-[16px]">calendar_today</span> Sejak 2019
+    </div>
+    <h1 class="font-headline-xl text-headline-xl text-on-surface mb-6">Tentang HDSF Mushroom</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+HDSF Mushroom adalah perusahaan budidaya jamur tiram yang berdiri sejak tahun 2019 dan berfokus pada pengembangan produk jamur berkualitas dengan sistem budidaya yang berkelanjutan.<br>
+Berawal dari skala budidaya kecil, HDSF Mushroom terus berkembang melalui inovasi, peningkatan kualitas produksi, dan penguatan kemitraan lokal. <br>
+</p>
+<div class="mt-10 flex flex-wrap justify-center gap-4">
+      <a href="#visi-misi" class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:shadow-lg transition-all">
+  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">visibility</span>
+  Visi & Misi
+</a>
+      <a href="#proses-budidaya" class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:shadow-lg transition-all">
+  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+  Proses Budidaya Jamur
+</a>
+    </div>
+    <div class="mt-16 grid grid-cols-3 gap-8 border-t border-outline-variant/30 pt-10">
+      <div>
+        <div class="font-headline-lg text-headline-lg text-primary">7+</div>
+        <div class="font-label-sm text-label-sm text-on-surface-variant">Tahun Perjalanan</div>
+      </div>
+      <div>
+        <div class="font-headline-lg text-headline-lg text-primary">100%</div>
+        <div class="font-label-sm text-label-sm text-on-surface-variant">Organik</div>
+      </div>
+      <div>
+        <div class="font-headline-lg text-headline-lg text-primary">7+</div>
+        <div class="font-label-sm text-label-sm text-on-surface-variant">Mitra Tetap</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Visi & Misi Section -->
+<section id="visi-misi" class="py-section-gap px-gutter max-w-container-max mx-auto">
+  <div class="grid md:grid-cols-2 gap-16 items-center">
+    <div class="space-y-10">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3 text-primary">
+          <span class="material-symbols-outlined text-3xl">visibility</span>
+          <h2 class="font-headline-lg text-headline-lg">Visi Kami</h2>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Menjadi produsen jamur tiram terpercaya di Indonesia dengan ekosistem budidaya yang berkelanjutan dan bernilai tambah bagi petani dan konsumen.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-center gap-3 text-primary">
+          <span class="material-symbols-outlined text-3xl">assignment</span>
+          <h2 class="font-headline-lg text-headline-lg">Misi Kami</h2>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span>
+            <span class="font-body-md text-body-md text-on-surface-variant">Memproduksi jamur tiram berkualitas konsisten dengan SOP yang terukur.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span>
+            <span class="font-body-md text-body-md text-on-surface-variant">Membangun kemitraan yang transparan dan saling menguntungkan.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span>
+            <span class="font-body-md text-body-md text-on-surface-variant">Mendorong adopsi teknologi untuk efisiensi operasional dan kualitas produk.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="relative group pb-10">
+
+  <!-- Gambar -->
+  <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+    <img 
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+      src="image/kumbung.png"
+      alt="Kumbung Jamur"
+    />
+  </div>
+
+  <!-- Kotak kecil -->
+  <div class="absolute bottom-0 left-0 translate-y-1/2 bg-white p-6 rounded-xl shadow-lg border border-outline-variant/30 max-w-[200px]">
+    <div class="font-headline-md text-headline-md text-primary">7+</div>
+    <div class="font-label-sm text-label-sm text-on-surface-variant">
+      Tahun Pengalaman Operasional
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- Nilai-Nilai Perusahaan -->
+<section class="bg-surface-container-low py-section-gap">
+  <div class="px-gutter max-w-container-max mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-headline-lg text-headline-lg mb-4">Nilai-Nilai Perusahaan</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">Prinsip yang kami pegang sejak 2019 dan terus kami jaga saat bertumbuh.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="bg-white p-8 rounded-xl border border-outline-variant/30 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-secondary-container/30 rounded-lg flex items-center justify-center mb-6 text-secondary">
+          <span class="material-symbols-outlined text-3xl">eco</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md mb-3">Sustainability</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Praktik budidaya berkelanjutan &amp; ramah lingkungan.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl border border-outline-variant/30 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-6 text-primary">
+          <span class="material-symbols-outlined text-3xl">visibility</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md mb-3">Transparency</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Pelaporan operasional yang jelas dan jujur.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl border border-outline-variant/30 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-tertiary-fixed/30 rounded-lg flex items-center justify-center mb-6 text-tertiary">
+          <span class="material-symbols-outlined text-3xl">stars</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md mb-3">Excellence</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Standar mutu produk &amp; layanan yang konsisten.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl border border-outline-variant/30 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-secondary-fixed/30 rounded-lg flex items-center justify-center mb-6 text-secondary">
+          <span class="material-symbols-outlined text-3xl">lightbulb</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md mb-3">Innovation</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Pemanfaatan teknologi untuk efisiensi &amp; kualitas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Perjalanan Kami (Timeline) -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto overflow-hidden">
+  <div class="text-center mb-16">
+    <div class="flex justify-center mb-4 text-primary">
+      <span class="material-symbols-outlined text-4xl">event_upcoming</span>
+    </div>
+    <h2 class="font-headline-lg text-headline-lg mb-4">Perjalanan Kami</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant">Dari rintisan 2019 hingga penguatan operasi &amp; kemitraan hari ini.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/20 shadow-sm">
+      <div class="aspect-video rounded-xl overflow-hidden mb-6">
+        <img 
+  class="w-full h-full object-cover"
+  src="image/rintisan_usaha2019.jpeg" 
+  alt="2019 Rintisan"
+/>
+      </div>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="bg-primary text-on-primary px-3 py-0.5 rounded-full font-label-md text-label-md">2019</span>
+        <h4 class="font-headline-md text-headline-md">Rintisan Usaha</h4>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant">Mulai merintis budidaya jamur tiram skala rumahan dengan batch uji coba 120 baglog.</p>
+    </div>
+    <div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/20 shadow-sm">
+      <div class="aspect-video rounded-xl overflow-hidden mb-6">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcRbXW_HHTpnnnMQxmqHtkOn1i8iHtq2R-BqNqQzpZGlkLYH2zAqrGRjfxYCcSRHMgwLUURJ0las8geUalAX-GGqHJpRTrE7TU-pEoRhOLUO-KCNW-GX9Ji-VseI8nsVIlUoEa1gRSd7VaawcioV6zOWb3BHUEsvA6CBSs5fCRd0XeVXVJW83-LDewFSW4tXv6y_xPzaY3BGaWfl-Y3a74JNei59J5-pD8Sx6t0UlFPLtHEO0e_4VsP6tkaue9JRymVnKdd1dOX5w" alt="2020 Validasi"/>
+      </div>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="bg-primary text-on-primary px-3 py-0.5 rounded-full font-label-md text-label-md">2020</span>
+        <h4 class="font-headline-md text-headline-md">Validasi Operasional</h4>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant">Menyempurnakan SOP produksi &amp; quality control, mulai memasok ke pelanggan sekitar.</p>
+    </div>
+    <div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/20 shadow-sm">
+  
+  <div class="aspect-video rounded-xl overflow-hidden mb-6">
+    <img 
+      class="w-full h-full object-cover" 
+      src="image/kumbung_jamur2022.jpeg" 
+      alt="Kumbung Jamur"
+    />
+  </div>
+
+  <div class="flex items-center gap-2 mb-3">
+    <span class="bg-primary text-on-primary px-3 py-0.5 rounded-full font-label-md text-label-md">
+      2022
+    </span>
+    <h4 class="font-headline-md text-headline-md">
+      Fasilitas Produksi
+    </h4>
+  </div>
+
+  <p class="font-body-md text-body-md text-on-surface-variant">
+    Membangun kumbung jamur pertama berkapasitas &gt;10.000 baglog sampai dengan sekarang dan memperluas distribusi.
+  </p>
+
+</div>
+    <div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/20 shadow-sm">
+      <div class="aspect-video rounded-xl overflow-hidden mb-6">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnk2EKG21p-VlIWYW2plNriAly131ZyPzYhlBCAjvDfUiA8J1zwG8ugbds88a_KRoSJ4Xmf3EvjjthbQBDVD_0BqI0u8_7G5fVZDaRTt8AE5MJm7pReSyYTdg49zTTYd1JGo5O0q79LisIO6DiNFvLCS9KpWJDazqHYFonKm1pHTKVaENFynDLhLm_PWaVuto7c4GYzXvvhgdcipHGKIbmJHCZxFE59-45_UH7mdYnjkEQeSE7ZC9wl2f8m6aqbRXixxhFFw2IzQo" alt="2023 Kemitraan"/>
+      </div>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="bg-primary text-on-primary px-3 py-0.5 rounded-full font-label-md text-label-md">2023</span>
+        <h4 class="font-headline-md text-headline-md">Kemitraan Lokal</h4>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant">Standardisasi mutu internal dan memulai kemitraan petani lokal untuk skala produksi.</p>
+    </div>
+    <div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/20 shadow-sm">
+      <div class="aspect-video rounded-xl overflow-hidden mb-6">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKWJmK52Hpbkt8gzl9pw6YqVs5Xdncq8PLicN57Ts8765wwakAW80Gh1x4vyk1ub60256cTL86xxgTFtjl1lsetL6dE31rPN_pk2m1PNCFwDOsT6KmwxgczAqH5-NfkKVFeYbXaWKHCS2L8ka5DsKxvihmDUitEHrGHTQzhWK12ltn4RHW4yDSkGL5BlfUW0k1-HDew3NYndCemXKhBiccyCsJl4wI40ZxkU5Ko9Wqe0BGZQ49tSLADO3H0nGFd22hI-E2ugczp3Y" alt="2024 Digitalisasi"/>
+      </div>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="bg-primary text-on-primary px-3 py-0.5 rounded-full font-label-md text-label-md">2026</span>
+        <h4 class="font-headline-md text-headline-md">Digitalisasi Proses</h4>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant">Pencatatan produksi dan stok terdigitalisasi untuk transparansi operasional penuh.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Galeri Operasional -->
+<section id="proses-budidaya" class="py-section-gap px-gutter max-w-container-max mx-auto">
+  <div class="text-center mb-12">
+    <div class="flex justify-center mb-4 text-primary">
+      <span class="material-symbols-outlined text-4xl">photo_library</span>
+    </div>
+    <h2 class="font-headline-lg text-headline-lg mb-4">Galeri Operasional</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant">Snapshot proses &amp; fasilitas kami seiring perjalanan sejak 2019.</p>
+  </div>
+  <div class="flex flex-wrap justify-center gap-3 mb-10">
+
+  <button onclick="filterGallery('all', this)"
+    class="filter-btn px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-all">
+    Semua
+  </button>
+
+  <button onclick="filterGallery('produksi', this)"
+    class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-all">
+    Produksi
+  </button>
+
+  <button onclick="filterGallery('fasilitas', this)"
+    class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-all">
+    Fasilitas
+  </button>
+
+  <button onclick="filterGallery('kegiatan', this)"
+    class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-all">
+    Kegiatan
+  </button>
+
+</div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+  <!-- PRODUKSI 1 -->
+<div class="gallery-item produksi aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/produksi1.png" alt="">
+</div>
+
+<!-- PRODUKSI 2 -->
+<div class="gallery-item produksi aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/produksi2.png" alt="">
+</div>
+
+<!-- PRODUKSI 3 -->
+<div class="gallery-item produksi aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/produksi3.png" alt="">
+</div>
+
+  <!-- FASILITAS 1 -->
+<div class="gallery-item fasilitas aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/mesin1.png" alt="">
+</div>
+
+<!-- FASILITAS 2 -->
+<div class="gallery-item fasilitas aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/mesin2.png" alt="">
+</div>
+
+<!-- FASILITAS 3-->
+<div class="gallery-item fasilitas aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/mesin3.png" alt="">
+</div>
+
+<!-- FASILITAS 4-->
+<div class="gallery-item fasilitas aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/mesin4.png" alt="">
+</div>
+
+  <!-- KEGIATAN 1 -->
+<div class="gallery-item kegiatan aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/kegiatan1.png" alt="">
+</div>
+
+<!-- KEGIATAN 2 -->
+<div class="gallery-item kegiatan aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+  <img class="w-full h-full object-cover" src="image/kegiatan2.png" alt="">
+</div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-inverse-surface text-surface-variant py-section-gap">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full px-gutter max-w-container-max mx-auto">
+    <div>
+      <img 
+  src="image/logo.png" 
+  alt="HDSF Mushroom" 
+  class="w-24 h-24 object-contain mb-4"
+/>
+<p class="text-body-md opacity-80 mb-6">Produsen jamur tiram berkualitas tinggi dengan komitmen pada kesegaran dan kepuasan pelanggan di setiap panen.</p>
+      <div class="flex gap-4">
+        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+          <span class="material-symbols-outlined text-[20px]">social_leaderboard</span>
+        </a>
+        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+          <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h5 class="text-primary-fixed font-bold mb-6">Navigasi Cepat</h5>
+      <ul class="space-y-3 font-label-md">
+        <li><a class="hover:text-primary-fixed transition-colors" href="beranda.html">Beranda</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="produk.html">Produk</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="tentang.html">Tentang Kami</a></li>
+        <li><a class="hover:text-primary-fixed transition-colors" href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-label-md text-label-md text-primary-fixed mb-6 uppercase tracking-widest">Produk Kami</h4>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Jamur Tiram Putih</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Jamur Tiram Cokelat</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Bibit F1</a></li>
+        <li><a class="font-body-md text-body-md hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="produk.html">Bibit F2</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-primary-fixed font-bold mb-6">Kontak Kami</h5>
+      <ul class="space-y-4 font-label-md">
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-primary-fixed">
+      location_on
+    </span>
+
+    <a 
+      href="https://share.google/Xf4Ib56LQp6OHUOcy"
+      target="_blank"
+      class="font-body-md text-body-md opacity-80 hover:text-green-700 hover:underline"
+    >
+      8QQ2+VF5, Banjaran Tengah, Bojongloa, Kec. Kasomalang,
+      Kabupaten Subang, Jawa Barat 41286
+    </a>
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-primary-fixed">schedule</span>
+          <span>09:00 - 17:00 WIB</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/10 text-label-sm opacity-60 text-center">
+    © 2026 HDSF Mushroom. All rights reserved.
+  </div>
+</footer>
+<script>
+function filterGallery(category, button) {
+
+  const items = document.querySelectorAll('.gallery-item');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  // reset semua button
+  buttons.forEach(btn => {
+    btn.classList.remove('bg-primary', 'text-on-primary');
+    btn.classList.add('border', 'border-outline-variant', 'text-on-surface-variant');
+  });
+
+  // button aktif jadi hijau
+  button.classList.remove('border', 'border-outline-variant', 'text-on-surface-variant');
+  button.classList.add('bg-primary', 'text-on-primary');
+
+  // filter gambar
+  items.forEach(item => {
+
+    if(category === 'all') {
+      item.style.display = 'block';
+    } else {
+
+      if(item.classList.contains(category)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+
+    }
+
+  });
+}
+</script>
+</body>
+</html>

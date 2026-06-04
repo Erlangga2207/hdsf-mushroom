@@ -1,0 +1,18 @@
+# ============================================================
+#  HDSF Mushroom - Apache Security Configuration
+# ============================================================
+
+# Aktifkan mod_rewrite
+Options -Indexes
+
+# Blokir akses langsung ke file sensitif
+<FilesMatch "\.(sql|md|log|sh|env)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Redirect root ke index.php
+DirectoryIndex index.php
+
+# Charset default
+AddDefaultCharset UTF-8
