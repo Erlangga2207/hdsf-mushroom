@@ -122,9 +122,7 @@ $nav_items = [
     <div class="px-md mb-lg">
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-sm">
-                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                    <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL' 1">eco</span>
-                </div>
+                <img src="<?= $base_path ?>../public/image/logo.png" alt="HDSF Mushroom Logo" class="w-10 h-10 object-contain rounded-lg" />
                 <div>
                     <h1 class="text-[18px] font-semibold text-primary leading-tight">HDSF Mushroom</h1>
                     <p class="text-[12px] text-on-surface-variant opacity-70">Inventory System</p>
