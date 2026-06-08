@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Blokir folder admin dari crawler
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /assets/
+
+Sitemap: https://hdsfmushroom.com/sitemap.xml
