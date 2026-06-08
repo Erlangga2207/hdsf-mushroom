@@ -1,14 +1,4 @@
 -- ============================================================
---  SETUP DATABASE - UMKM JAMUR (HDSF Mushroom) v2.3.0
---  UPDATE: harga_beli_putih & harga_beli_coklat di barang_masuk
---          FIFO multi-batch pengurangan stok
--- ============================================================
-
-CREATE DATABASE IF NOT EXISTS db_umkm_jamur
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE db_umkm_jamur;
-
--- ============================================================
 --  TABEL USER
 -- ============================================================
 CREATE TABLE IF NOT EXISTS user (

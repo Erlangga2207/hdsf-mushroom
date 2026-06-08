@@ -2,10 +2,7 @@
 // ============================================================
 //  KONEKSI DATABASE - HDSF Mushroom v2.3.0
 // ============================================================
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'hdsf_mushroom');
+require_once __DIR__ . '/config.local.php';
 
 $koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 if (!$koneksi) {
