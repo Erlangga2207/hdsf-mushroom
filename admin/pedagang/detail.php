@@ -183,11 +183,11 @@ require_once '../header.php';
     <?php require_once '../fifo_widget.php'; ?>
 
     <!-- Form + Riwayat -->
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-gutter">
+    <div class="space-y-gutter">
 
         <!-- Form -->
-        <div class="lg:col-span-2">
-            <div class="bg-surface-container-lowest rounded-xl card-shadow border border-outline-variant/10 p-lg sticky top-20">
+        <div>
+            <div class="bg-surface-container-lowest rounded-xl card-shadow border border-outline-variant/10 p-lg">
                 <div class="flex items-center gap-sm mb-md border-b border-outline-variant/10 pb-sm">
                     <span class="material-symbols-outlined text-primary">outbox</span>
                     <h3 class="text-[16px] font-semibold text-on-surface">Input Barang Keluar</h3>
@@ -304,7 +304,7 @@ require_once '../header.php';
         </div>
 
         <!-- Riwayat -->
-        <div class="lg:col-span-3">
+        <div>
             <div class="bg-surface-container-lowest rounded-xl card-shadow border border-outline-variant/10 overflow-hidden">
                 <div class="px-md py-sm flex items-center justify-between border-b border-outline-variant/10">
                     <div class="flex items-center gap-sm">
