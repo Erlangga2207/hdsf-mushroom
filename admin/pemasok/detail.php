@@ -106,6 +106,7 @@ $stats = mysqli_fetch_assoc(mysqli_query($koneksi,
 
 $riwayat = mysqli_query($koneksi,
     "SELECT bm.*, s.sisa_putih, s.sisa_coklat,
+            s.jumlah_jamur_putih, s.jumlah_jamur_coklat,
             COALESCE((
                 SELECT SUM(bkd.potong_putih)
                 FROM barang_keluar_detail bkd
@@ -384,8 +385,15 @@ require_once '../header.php';
                                 $ada_harga      = $row['harga_beli_putih'] !== null || $row['harga_beli_coklat'] !== null;
                                 $sisa_total     = ($row['sisa_putih'] ?? 0) + ($row['sisa_coklat'] ?? 0);
                                 $batch_habis    = $sisa_total <= 0;
-                                $terjual_putih  = (float)($row['terjual_putih']  ?? 0);
-                                $terjual_coklat = (float)($row['terjual_coklat'] ?? 0);
+                                if ($batch_habis) {
+                                    // Stok habis = semua terjual, hitung dari jumlah asli batch
+                                    $terjual_putih  = (float)($row['jumlah_jamur_putih']  ?? $row['jamur_putih']  ?? 0);
+                                    $terjual_coklat = (float)($row['jumlah_jamur_coklat'] ?? $row['jamur_coklat'] ?? 0);
+                                } else {
+                                    // Stok masih ada, gunakan sub-query terjual
+                                    $terjual_putih  = (float)($row['terjual_putih']  ?? 0);
+                                    $terjual_coklat = (float)($row['terjual_coklat'] ?? 0);
+                                }
                                 // Pendapatan realtime: hanya dari kg yang sudah terjual
                                 $pendapatan_realtime =
                                     ($terjual_putih  * (float)($row['harga_beli_putih']  ?? 0)) +
