@@ -87,18 +87,19 @@ $stats = mysqli_fetch_assoc(mysqli_query($koneksi,
             COALESCE(SUM(bm.jamur_putih),0)   AS total_putih,
             COALESCE(SUM(bm.jamur_coklat),0)  AS total_coklat,
             COALESCE(SUM(bm.jumlah_barang),0) AS grand_total,
-            -- Pendapatan realtime: dari kg yang sudah terjual saja
             COALESCE(SUM(
                 COALESCE((
-                    SELECT SUM(bkd.potong_putih)
+                    SELECT SUM(bkd.potong_putih * bk.harga_putih)
                     FROM barang_keluar_detail bkd
-                    WHERE bkd.id_stock = s.id_stock
-                ), 0) * COALESCE(bm.harga_beli_putih, 0) +
+                    JOIN barang_keluar bk ON bkd.id_barang_keluar = bk.id_barang_keluar
+                    WHERE bkd.id_stock = s.id_stock AND bk.harga_putih IS NOT NULL
+                ), 0) +
                 COALESCE((
-                    SELECT SUM(bkd.potong_coklat)
+                    SELECT SUM(bkd.potong_coklat * bk.harga_coklat)
                     FROM barang_keluar_detail bkd
-                    WHERE bkd.id_stock = s.id_stock
-                ), 0) * COALESCE(bm.harga_beli_coklat, 0)
+                    JOIN barang_keluar bk ON bkd.id_barang_keluar = bk.id_barang_keluar
+                    WHERE bkd.id_stock = s.id_stock AND bk.harga_coklat IS NOT NULL
+                ), 0)
             ), 0) AS total_pendapatan
      FROM barang_masuk bm
      LEFT JOIN stock s ON s.id_barang_masuk = bm.id_barang_masuk
@@ -116,7 +117,19 @@ $riwayat = mysqli_query($koneksi,
                 SELECT SUM(bkd.potong_coklat)
                 FROM barang_keluar_detail bkd
                 WHERE bkd.id_stock = s.id_stock
-            ), 0) AS terjual_coklat
+            ), 0) AS terjual_coklat,
+            COALESCE((
+                SELECT SUM(bkd.potong_putih * bk.harga_putih)
+                FROM barang_keluar_detail bkd
+                JOIN barang_keluar bk ON bkd.id_barang_keluar = bk.id_barang_keluar
+                WHERE bkd.id_stock = s.id_stock AND bk.harga_putih IS NOT NULL
+            ), 0) AS pendapatan_putih,
+            COALESCE((
+                SELECT SUM(bkd.potong_coklat * bk.harga_coklat)
+                FROM barang_keluar_detail bkd
+                JOIN barang_keluar bk ON bkd.id_barang_keluar = bk.id_barang_keluar
+                WHERE bkd.id_stock = s.id_stock AND bk.harga_coklat IS NOT NULL
+            ), 0) AS pendapatan_coklat
      FROM barang_masuk bm
      LEFT JOIN stock s ON s.id_barang_masuk = bm.id_barang_masuk
      WHERE bm.id_pemasok = $id $date_where
@@ -128,15 +141,17 @@ $filtered_stats = mysqli_fetch_assoc(mysqli_query($koneksi,
             COALESCE(SUM(bm.jumlah_barang),0) AS grand_total,
             COALESCE(SUM(
                 COALESCE((
-                    SELECT SUM(bkd.potong_putih)
+                    SELECT SUM(bkd.potong_putih * bk.harga_putih)
                     FROM barang_keluar_detail bkd
-                    WHERE bkd.id_stock = s.id_stock
-                ), 0) * COALESCE(bm.harga_beli_putih, 0) +
+                    JOIN barang_keluar bk ON bkd.id_barang_keluar = bk.id_barang_keluar
+                    WHERE bkd.id_stock = s.id_stock AND bk.harga_putih IS NOT NULL
+                ), 0) +
                 COALESCE((
-                    SELECT SUM(bkd.potong_coklat)
+                    SELECT SUM(bkd.potong_coklat * bk.harga_coklat)
                     FROM barang_keluar_detail bkd
-                    WHERE bkd.id_stock = s.id_stock
-                ), 0) * COALESCE(bm.harga_beli_coklat, 0)
+                    JOIN barang_keluar bk ON bkd.id_barang_keluar = bk.id_barang_keluar
+                    WHERE bkd.id_stock = s.id_stock AND bk.harga_coklat IS NOT NULL
+                ), 0)
             ), 0) AS total_pendapatan
      FROM barang_masuk bm
      LEFT JOIN stock s ON s.id_barang_masuk = bm.id_barang_masuk
@@ -385,19 +400,11 @@ require_once '../header.php';
                                 $ada_harga      = $row['harga_beli_putih'] !== null || $row['harga_beli_coklat'] !== null;
                                 $sisa_total     = ($row['sisa_putih'] ?? 0) + ($row['sisa_coklat'] ?? 0);
                                 $batch_habis    = $sisa_total <= 0;
-                                if ($batch_habis) {
-                                    // Stok habis = semua terjual, hitung dari jumlah asli batch
-                                    $terjual_putih  = (float)($row['jumlah_jamur_putih']  ?? $row['jamur_putih']  ?? 0);
-                                    $terjual_coklat = (float)($row['jumlah_jamur_coklat'] ?? $row['jamur_coklat'] ?? 0);
-                                } else {
-                                    // Stok masih ada, gunakan sub-query terjual
-                                    $terjual_putih  = (float)($row['terjual_putih']  ?? 0);
-                                    $terjual_coklat = (float)($row['terjual_coklat'] ?? 0);
-                                }
-                                // Pendapatan realtime: hanya dari kg yang sudah terjual
-                                $pendapatan_realtime =
-                                    ($terjual_putih  * (float)($row['harga_beli_putih']  ?? 0)) +
-                                    ($terjual_coklat * (float)($row['harga_beli_coklat'] ?? 0));
+                                $terjual_putih      = (float)($row['terjual_putih']    ?? 0);
+                                $terjual_coklat     = (float)($row['terjual_coklat']   ?? 0);
+                                $pendapatan_putih   = (float)($row['pendapatan_putih']  ?? 0);
+                                $pendapatan_coklat  = (float)($row['pendapatan_coklat'] ?? 0);
+                                $pendapatan_realtime = $pendapatan_putih + $pendapatan_coklat;
                             ?>
                             <tr class="hover:bg-surface-container-low/50 transition-colors <?= $batch_habis ? 'opacity-60' : '' ?>">
                                 <td class="px-md py-sm">
@@ -406,15 +413,9 @@ require_once '../header.php';
                                 </td>
                                 <td class="px-md py-sm text-right">
                                     <p class="text-[13px]"><?= number_format($row['jamur_putih'],2) ?> <span class="text-[11px] text-on-surface-variant">kg</span></p>
-                                    <?php if ($row['harga_beli_putih']): ?>
-                                    <p class="text-[10px] text-on-surface-variant">@ Rp <?= number_format($row['harga_beli_putih'],0,',','.') ?></p>
-                                    <?php endif; ?>
                                 </td>
                                 <td class="px-md py-sm text-right">
                                     <p class="text-[13px]"><?= number_format($row['jamur_coklat'],2) ?> <span class="text-[11px] text-on-surface-variant">kg</span></p>
-                                    <?php if ($row['harga_beli_coklat']): ?>
-                                    <p class="text-[10px] text-on-surface-variant">@ Rp <?= number_format($row['harga_beli_coklat'],0,',','.') ?></p>
-                                    <?php endif; ?>
                                 </td>
                                 <!-- Sisa stok per batch -->
                                 <td class="px-md py-sm text-right">
@@ -438,27 +439,25 @@ require_once '../header.php';
                                     </div>
                                     <?php endif; ?>
                                 </td>
-                                <!-- Pendapatan realtime (berdasarkan kg terjual) -->
+                                <!-- Pendapatan dari harga jual ke pedagang -->
                                 <td class="px-md py-sm text-right">
-                                    <?php if (!$ada_harga): ?>
-                                    <span class="inline-flex items-center gap-xs text-[10px] text-on-surface-variant/60 bg-surface-container px-xs py-[2px] rounded">
-                                        <span class="material-symbols-outlined text-[11px]">schedule</span>
-                                        Belum ada harga
-                                    </span>
-                                    <?php elseif ($terjual_putih <= 0 && $terjual_coklat <= 0): ?>
+                                    <?php if ($pendapatan_realtime <= 0 && $terjual_putih <= 0 && $terjual_coklat <= 0): ?>
                                     <span class="inline-flex items-center gap-xs text-[10px] text-on-surface-variant/60 bg-surface-container px-xs py-[2px] rounded">
                                         <span class="material-symbols-outlined text-[11px]">hourglass_empty</span>
                                         Belum terjual
                                     </span>
+                                    <?php elseif ($pendapatan_realtime <= 0 && ($terjual_putih > 0 || $terjual_coklat > 0)): ?>
+                                    <span class="inline-flex items-center gap-xs text-[10px] text-on-surface-variant/60 bg-surface-container px-xs py-[2px] rounded">
+                                        <span class="material-symbols-outlined text-[11px]">schedule</span>
+                                        Harga belum diisi
+                                    </span>
                                     <?php else: ?>
                                     <div>
-                                        <?php if ($terjual_putih > 0 && $row['harga_beli_putih']): 
-                                            $pp = $terjual_putih * (float)$row['harga_beli_putih']; ?>
-                                        <p class="text-[11px]">Putih: <strong class="text-primary">Rp <?= number_format($pp,0,',','.') ?></strong></p>
+                                        <?php if ($pendapatan_putih > 0): ?>
+                                        <p class="text-[11px]">Putih: <strong class="text-primary">Rp <?= number_format($pendapatan_putih,0,',','.') ?></strong></p>
                                         <?php endif; ?>
-                                        <?php if ($terjual_coklat > 0 && $row['harga_beli_coklat']): 
-                                            $pc = $terjual_coklat * (float)$row['harga_beli_coklat']; ?>
-                                        <p class="text-[11px]">Coklat: <strong class="text-tertiary">Rp <?= number_format($pc,0,',','.') ?></strong></p>
+                                        <?php if ($pendapatan_coklat > 0): ?>
+                                        <p class="text-[11px]">Coklat: <strong class="text-tertiary">Rp <?= number_format($pendapatan_coklat,0,',','.') ?></strong></p>
                                         <?php endif; ?>
                                         <p class="text-[12px] font-bold text-primary border-t border-outline-variant/20 pt-xs mt-xs">
                                             Rp <?= number_format($pendapatan_realtime,0,',','.') ?>

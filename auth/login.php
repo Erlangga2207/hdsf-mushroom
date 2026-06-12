@@ -52,8 +52,8 @@ unset($_SESSION['login_error']);
 
         <!-- Branding -->
         <div class="flex flex-col items-center mb-lg">
-            <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-md shadow-md">
-                <span class="material-symbols-outlined text-white" style="font-size:40px;font-variation-settings:'FILL' 1">eco</span>
+            <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-md shadow-md">
+                <img src="../image/logo.png" alt="HDSF Mushroom Logo" class="h-12 w-auto object-contain"/>
             </div>
             <h1 class="text-[28px] font-bold text-primary tracking-tight">HDSF Mushroom</h1>
             <p class="text-[13px] text-on-surface-variant mt-xs">Inventory Management System</p>
@@ -107,7 +107,7 @@ unset($_SESSION['login_error']);
 
     <div class="mt-md text-center">
         <p class="text-[10px] text-on-surface-variant/40 tracking-[0.1em] uppercase">
-            V.2.1.0 © <?= date('Y') ?> HDSF Organic Precision
+            © <?= date('Y') ?> HDSF Organic Precision
         </p>
     </div>
 </main>
